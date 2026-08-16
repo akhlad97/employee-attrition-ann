@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attrition Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Employee Attrition Prediction</h1>
+
+    <form action="/predict" method="POST">
+
+        <div class="form-grid">
+
+            <div>
+                <label>Age</label>
+                <input type="number" name="Age" value="30" required>
+            </div>
+
+            <div>
+                <label>Business Travel</label>
+                <select name="BusinessTravel" required>
+                    <option>Travel_Rarely</option>
+                    <option>Travel_Frequently</option>
+                    <option>Non-Travel</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Daily Rate</label>
+                <input type="number" name="DailyRate" value="800" required>
+            </div>
+
+            <div>
+                <label>Department</label>
+                <select name="Department" required>
+                    <option>Research & Development</option>
+                    <option>Sales</option>
+                    <option>Human Resources</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Distance From Home</label>
+                <input type="number" name="DistanceFromHome" value="5" required>
+            </div>
+
+            <div>
+                <label>Education</label>
+                <input type="number" name="Education" min="1" max="5" value="3" required>
+            </div>
+
+            <div>
+                <label>Education Field</label>
+                <select name="EducationField" required>
+                    <option>Medical</option>
+                    <option>Life Sciences</option>
+                    <option>Marketing</option>
+                    <option>Technical Degree</option>
+                    <option>Human Resources</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Environment Satisfaction</label>
+                <input type="number" name="EnvironmentSatisfaction" min="1" max="4" value="3" required>
+            </div>
+
+            <div>
+                <label>Gender</label>
+                <select name="Gender" required>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Hourly Rate</label>
+                <input type="number" name="HourlyRate" value="70" required>
+            </div>
+
+            <div>
+                <label>Job Involvement</label>
+                <input type="number" name="JobInvolvement" min="1" max="4" value="3" required>
+            </div>
+
+            <div>
+                <label>Job Level</label>
+                <input type="number" name="JobLevel" min="1" max="5" value="2" required>
+            </div>
+
+            <div>
+                <label>Job Role</label>
+                <select name="JobRole" required>
+                    <option>Research Scientist</option>
+                    <option>Sales Executive</option>
+                    <option>Laboratory Technician</option>
+                    <option>Manufacturing Director</option>
+                    <option>Healthcare Representative</option>
+                    <option>Manager</option>
+                    <option>Sales Representative</option>
+                    <option>Research Director</option>
+                    <option>Human Resources</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Job Satisfaction</label>
+                <input type="number" name="JobSatisfaction" min="1" max="4" value="3" required>
+            </div>
+
+            <div>
+                <label>Marital Status</label>
+                <select name="MaritalStatus" required>
+                    <option>Single</option>
+                    <option>Married</option>
+                    <option>Divorced</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Monthly Income</label>
+                <input type="number" name="MonthlyIncome" value="5000" required>
+            </div>
+
+            <div>
+                <label>Monthly Rate</label>
+                <input type="number" name="MonthlyRate" value="15000" required>
+            </div>
+
+            <div>
+                <label>Number of Companies Worked</label>
+                <input type="number" name="NumCompaniesWorked" value="2" required>
+            </div>
+
+            <div>
+                <label>Over Time</label>
+                <select name="OverTime" required>
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Percent Salary Hike</label>
+                <input type="number" name="PercentSalaryHike" value="15" required>
+            </div>
+
+            <div>
+                <label>Performance Rating</label>
+                <input type="number" name="PerformanceRating" min="3" max="4" value="3" required>
+            </div>
+
+            <div>
+                <label>Relationship Satisfaction</label>
+                <input type="number" name="RelationshipSatisfaction" min="1" max="4" value="3" required>
+            </div>
+
+            <div>
+                <label>Stock Option Level</label>
+                <input type="number" name="StockOptionLevel" min="0" max="3" value="0" required>
+            </div>
+
+            <div>
+                <label>Total Working Years</label>
+                <input type="number" name="TotalWorkingYears" value="8" required>
+            </div>
+
+            <div>
+                <label>Training Times Last Year</label>
+                <input type="number" name="TrainingTimesLastYear" value="3" required>
+            </div>
+
+            <div>
+                <label>Work Life Balance</label>
+                <input type="number" name="WorkLifeBalance" min="1" max="4" value="3" required>
+            </div>
+
+            <div>
+                <label>Years At Company</label>
+                <input type="number" name="YearsAtCompany" value="5" required>
+            </div>
+
+            <div>
+                <label>Years In Current Role</label>
+                <input type="number" name="YearsInCurrentRole" value="3" required>
+            </div>
+
+            <div>
+                <label>Years Since Last Promotion</label>
+                <input type="number" name="YearsSinceLastPromotion" value="1" required>
+            </div>
+
+            <div>
+                <label>Years With Current Manager</label>
+                <input type="number" name="YearsWithCurrManager" value="3" required>
+            </div>
+
+        </div>
+
+        <button type="submit">Predict Employee Attrition</button>
+
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h2>Prediction Result</h2>
+
+        {% if prediction == "Yes" %}
+            <p><strong>Prediction:</strong> Employee is likely to leave the company.</p>
+        {% elif prediction == "No" %}
+            <p><strong>Prediction:</strong> Employee is unlikely to leave the company.</p>
+        {% else %}
+            <p><strong>{{ prediction }}</strong></p>
+        {% endif %}
+
+        {% if probability is not none %}
+            <p>
+                <strong>Attrition Probability:</strong>
+                {{ "%.2f"|format(probability ) }}%
+            </p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
