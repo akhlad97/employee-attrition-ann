@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Local machine-learning model files
+*.keras
+*.h5
+*.pkl
+
+# Dataset
+data/
+
+# Jupyter files
+*.ipynb
+.ipynb_checkpoints/
+
+# Git
+.git/
+.gitignore
+
+# Local environment files
+.env
+venv/
+.venv/
